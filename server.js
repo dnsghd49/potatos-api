@@ -34,13 +34,13 @@ app.get('/', (req, res) => {
 })
 
 // CONTROLLERS 
-const usersController = require('./src/controllers/user_controller')
+const usersController = require('./controllers/user_controller')
 app.use('/users', usersController)
 
-const ratingsController = require('./src/controllers/rating_controller')
+const ratingsController = require('./controllers/rating_controller')
 app.use('/ratings', ratingsController)
 
-const moviesController = require('./src/controllers/movie_controller')
+const moviesController = require('./controllers/movie_controller')
 app.use('/movies', moviesController)
 
 app.listen(port, () => {
