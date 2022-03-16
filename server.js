@@ -11,6 +11,8 @@ const port = process.env.PORT || 3001;
 require('dotenv').config()
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
+const cors = require("cors");
+
 
 // SEQUELIZE CONNECTION
 const sequelize = new Sequelize(process.env.PG_URI, 
@@ -32,6 +34,8 @@ app.get('/', (req, res) => {
         message: 'Welcome to Rotten Potatoes'
     })
 })
+
+app.use(cors());
 
 // CONTROLLERS 
 const usersController = require('./controllers/user_controller')
